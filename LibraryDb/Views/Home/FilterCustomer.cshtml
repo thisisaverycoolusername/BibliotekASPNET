@@ -1,0 +1,23 @@
+﻿@model CustomerBook
+
+<h1>Visa böcker lånade av kund av kundsök</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" asp-action="FilterCustomer" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label>Välj kund:</label>
+                        <select name="customerId" asp-for="FkCustomerId" asp-items="@ViewBag.filterCustomerList">
+                            <option value="">Välj kund</option>
+                        </select>
+                    </td>
+                </tr>
+                    <td>
+                        <button type="submit">Filtrera</button>
+                    </td>
+            </table>
+        </form>
+    </div>
+</div>

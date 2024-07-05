@@ -1,0 +1,45 @@
+﻿@model CustomerBook
+
+<h1>Borrow book form</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" asp-action="BorrowBook" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label>Choose customer:</label>
+                        <select asp-for="FkCustomerId" asp-items="@ViewBag.CustomerList">
+                            <option value="">Choose customer in list</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Choose book:</label>
+                        <select asp-for="FkBookId" asp-items="@ViewBag.BookList">
+                            <option value="">Choose book in list</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Choose starting date of book loan:</label>
+                        <input asp-for="StartDateOfLoan" type="date" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Choose ending date of book loan:</label>
+                        <input asp-for="EndDateOfLoan" type="date" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Skicka</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
